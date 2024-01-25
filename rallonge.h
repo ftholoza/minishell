@@ -6,7 +6,7 @@
 /*   By: ftholoza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 20:31:08 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/01/25 20:31:58 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/01/25 21:33:24 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char			*add_next(char	*path, char	*name);
 int				change_oldpwd(t_cd *data, char *new);
 t_dlist			*add_element(char *str, t_dlist *env);
 int				cd(int argc, char **argv, t_dlist *env);
+int				ft_unset(int argc, char **argv, t_dlist *env);
 t_cd			*init_data(int argc, char **argv, t_dlist *env);
 
 //minishell_structs.h

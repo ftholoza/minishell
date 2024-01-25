@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 13:05:02 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/01/25 20:19:13 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/01/25 21:14:29 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	simple_cd(t_cd *data)
 	{
 		path = get_home_path(data);
 		if (!path)
-			return (0);
+			return (1);
 		ft_chdir(data, path);
 		return (1);
 	}

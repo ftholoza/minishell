@@ -6,7 +6,7 @@
 /*   By: ftholoza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 20:28:53 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/01/25 20:33:00 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/01/25 21:36:25 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ int	is_built_in(t_exec_cmd *cmd)
 	if (ft_strncmp(name, "cd", ft_strlen(name)) == 0)
 	{
 		if (cd(cmd->cmd->argc, cmd->cmd->argv, env))
+			return (1);
+	}
+	if (ft_strncmp(name, "unset", ft_strlen(name)) == 0)
+	{
+		if (ft_unset(cmd->cmd->argc, cmd->cmd->argv, env))
 			return (1);
 	}
 	return (0);

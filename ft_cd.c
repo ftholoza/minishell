@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:15:42 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/01/26 19:19:13 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/01/26 19:29:06 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -384,7 +384,7 @@ int	cd(int argc, char **argv, t_dlist *env)
 		simple_cd(data);
 		return (SUCCESS);
 	}
-	if (absolut_path(data) == SUCCESS)
+	if (absolut_path(data) != SUCCESS)
 		return (SUCCESS);
 	if (relative_path(data) != SUCCESS)
 		return (SUCCESS);

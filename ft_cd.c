@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:15:42 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/01/26 19:29:06 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/01/26 19:40:06 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -328,7 +328,7 @@ int	absolut_path(t_cd *data)
 	if (ft_strncmp(data->argv[1], "/", 1) == 0)
 	{
 		if (ft_chdir(data, data->argv[1]) != SUCCESS)
-			return (FAILURE);
+			return (SUCCESS);
 		free_struct_cd(data);
 		return (SUCCESS);
 	}
@@ -384,9 +384,9 @@ int	cd(int argc, char **argv, t_dlist *env)
 		simple_cd(data);
 		return (SUCCESS);
 	}
-	if (absolut_path(data) != SUCCESS)
+	if (absolut_path(data) == SUCCESS)
 		return (SUCCESS);
-	if (relative_path(data) != SUCCESS)
+	else if (relative_path(data) != SUCCESS)
 		return (SUCCESS);
 	return (SUCCESS);
 }
